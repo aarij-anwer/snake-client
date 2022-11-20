@@ -5,4 +5,4 @@ console.log("Connecting ...");
 
 const conn = connect();
 
-const input = setupInput();
+const input = setupInput(conn);
