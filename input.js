@@ -8,6 +8,10 @@ const handleUserInput = function(key) {
   }
 
   //navigation
+  // w - up
+  // a - left
+  // s - down
+  // d - right
   if (key === 'w') {
     connection.write("Move: up");
   }
@@ -25,6 +29,8 @@ const handleUserInput = function(key) {
   }
 
   //canned messages
+  //l - "Let's go!"
+  //b - "Booyah!"
   if (key === 'l') {
     connection.write("Say: Let's go!");
   }
