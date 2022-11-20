@@ -1,32 +1,30 @@
 let connection;
 
+//`key` is the user input
 const handleUserInput = function(key) {
-  // your code here
+  //escape key - control c
   if (key === '\u0003') {
-    // console.log("Control c pressed by user!");
     process.exit();
   }
 
+  //navigation
   if (key === 'w') {
-    // console.log("Move: up");
     connection.write("Move: up");
   }
 
   if (key === 'a') {
-    // console.log("Move: left");
     connection.write("Move: left");
   }
 
   if (key === 's') {
-    // console.log("Move: down");
     connection.write("Move: down");
   }
 
   if (key === 'd') {
-    // console.log("Move: right");
     connection.write("Move: right");
   }
 
+  //canned messages
   if (key === 'l') {
     connection.write("Say: Let's go!");
   }
@@ -34,10 +32,9 @@ const handleUserInput = function(key) {
   if (key === 'b') {
     connection.write("Say: Booyah!");
   }
-
-  
 };
 
+//input event handler that sends keys pressed by user to the Socket object `conn`
 const setupInput = function(conn) {
   connection = conn;
   const stdin = process.stdin;

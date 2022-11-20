@@ -1,6 +1,7 @@
 const net = require("net");
 const { IP, PORT } = require('./constants');
 
+//create connection with Snek server
 const connect = function() {
   const conn = net.createConnection({
     host: IP,
@@ -12,9 +13,6 @@ const connect = function() {
   conn.on("connect", () => {
     console.log("Successfully connected to the game server!");
     conn.write("Name: MAA");
-    // setTimeout(() => conn.write("Move: up"), 100);
-    // setTimeout(() => conn.write("Move: up"), 200);
-    // setTimeout(() => conn.write("Move: up"), 300);
   });
 
   conn.on("data", (data) => {
